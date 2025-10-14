@@ -3,7 +3,7 @@ import productReducer from '../reducers/ProductsSlice'
 import cardReducer from '../reducers/CardSlice';
 
 const rootReducer = combineReducers({
-    product: productReducer,  
+    products: productReducer,  
     cart: cardReducer,
 })
 

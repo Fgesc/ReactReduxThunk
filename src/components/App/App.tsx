@@ -9,7 +9,7 @@ import { fetchProducts } from '../../reducers/ProductsSlice';
 function App() {
     const dispatch = useTypedDispatch();
     const [isOpenModal, setIsOpenModal] = useState(false);
-    const { productsList, loading, error } = useTypedSelector(state => state.product);
+    const { productsList, loading, error } = useTypedSelector(state => state.products);
 
     useEffect(() => {
         dispatch(fetchProducts());
