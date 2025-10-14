@@ -15,7 +15,7 @@ const initialState: ProductsState = {
 };
 
 export const fetchProducts = createAsyncThunk(
-    'product/fetchProducts',
+    'products/fetchProducts',
     async () => {
         const products = await ProductService.getAll();
         return products;
