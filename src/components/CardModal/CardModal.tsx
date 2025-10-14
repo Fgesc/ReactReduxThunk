@@ -12,7 +12,7 @@ type ModalCardProps = {
 
 export const CardModal = ({ isOpenModal, onClose }: ModalCardProps) => {
     const dispatch = useTypedDispatch();
-    const cardItems = useTypedSelector(state => state.cart.cardItems);
+    const cardItems = useTypedSelector(state => state.card.cardItems);
 
     const totalAmount = cardItems.reduce((sum, item) => {
         return sum + item.product.price * item.quantity;

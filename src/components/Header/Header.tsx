@@ -9,7 +9,7 @@ type HeaderProps = {
 };
 
 export const Header = ({ setIsOpenModal, isOpenModal }: HeaderProps) => {
-    const cardItems = useTypedSelector(state => state.cart.cardItems);
+    const cardItems = useTypedSelector(state => state.card.cardItems);
     const totalItems = cardItems.reduce((sum, item) => sum + item.quantity, 0);
 
     return (

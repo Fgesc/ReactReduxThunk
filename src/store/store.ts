@@ -4,7 +4,7 @@ import cardReducer from '../reducers/CardSlice';
 
 const rootReducer = combineReducers({
     products: productReducer,  
-    cart: cardReducer,
+    card: cardReducer,
 })
 
 export const setupStore = () => {
