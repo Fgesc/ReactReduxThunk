@@ -11,7 +11,7 @@ type CardState = {
 };
 
 const initialState: CardState = {
-    cardItems: JSON.parse(localStorage.getItem('cardItems') || '[]'),
+    cardItems: []
 };
 
 const cardSlice = createSlice({
@@ -49,8 +49,11 @@ const cardSlice = createSlice({
             }
             localStorage.setItem('cardItems', JSON.stringify(state.cardItems));
         },
+        setCardItems(state, action: PayloadAction<CardItem[]>) {
+            state.cardItems = action.payload;
+        },
     },
 });
 
-export const { addToCard, removeFromCard, updateQuantity } = cardSlice.actions;
+export const { addToCard, removeFromCard, updateQuantity, setCardItems } = cardSlice.actions;
 export default cardSlice.reducer;

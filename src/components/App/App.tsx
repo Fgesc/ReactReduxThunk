@@ -5,6 +5,7 @@ import { Main } from '../Main';
 import { CardModal } from '../CardModal';
 import { CustomLoader } from '../../ui/Loader';
 import { fetchProducts } from '../../reducers/ProductsSlice';
+import { setCardItems } from '../../reducers/CardSlice';
 
 function App() {
     const dispatch = useTypedDispatch();
@@ -22,6 +23,13 @@ function App() {
         return () => {
             clearInterval(interval);
         };
+    }, [dispatch]);
+
+    useEffect(() => {
+        const saved = localStorage.getItem('cardItems');
+        if (!saved) return;
+        const parsed = JSON.parse(saved);
+        dispatch(setCardItems(parsed));
     }, [dispatch]);
 
     return (
